@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecionando...</title>
+  <script>
+    // Função para pegar o parâmetro "src" da URL
+    function getParametroSrc() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("src") || "desconhecido";
+    }
+
+    window.onload = function() {
+      const origem = getParametroSrc();
+
+      // Envia clique para o Google Form
+      // Este link já está com seu ID e campo Origem corretos
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSe5AZvnha02vdJ6dS-1B93EcA_PsGpWHSZM82-zgUgXpBnV1Q/formResponse?entry.1116342339=" + origem, {
+        method: "POST",
+        mode: "no-cors"
+      });
+
+      // Redireciona para a home da loja
+      window.location.href = "https://www.vacuostore.com.br/";
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
